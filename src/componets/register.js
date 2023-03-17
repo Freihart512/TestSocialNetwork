@@ -38,11 +38,10 @@ export const register = () => {
 
   div.querySelector('#registerForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('hola', e.target);
-    const email = e.target.email.value;
-    const password = e.target.psw.value;
+    const email = e.target.elements.email.value;
+    const password = e.target.elements.email.value;
     registerWithEmail(email, password)
-      .then((useCredential) => {
+      .then(() => {
         navigateTo('/home');
       })
       .catch(error => {
